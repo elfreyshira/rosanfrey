@@ -1,3 +1,13 @@
 .fixed[data-magellan-expedition="fixed"] {
 	left: auto !important;
 }
+
+.main-content {
+	padding-bottom: 40px;
+}
+
+h1 {
+	border-top: 1px solid gray;
+	margin-top: 15px;
+	padding-top: 15px;
+}
