@@ -1,3 +1,7 @@
+body {
+	color: #223 !important;
+}
+
 .fixed[data-magellan-expedition="fixed"] {
 	left: auto !important;
 }
@@ -7,7 +11,22 @@
 }
 
 h1 {
-	border-top: 1px solid gray;
-	margin-top: 15px;
+	border-top: 2px solid gray;
+	margin-top: 30px;
 	padding-top: 15px;
 }
+
+#story li {
+	border-bottom: 1px solid #ddd;
+}
+#story li:last-child {
+	border-bottom: none;
+}
+
+.intro {
+	font-family: 'Handlee', cursive;
+	margin-top: 20px;
+	color: #556;
+}
+
+
