@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="foundation.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="clippy.css">
+
     <link href="http://fonts.googleapis.com/css?family=Handlee" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -29,7 +31,7 @@
                         We would like to give a special shoutout to our parents for taking care of us from our teeny tiny human selves 23 years ago to where we are today. We love you mama, papa, mama, and baba!
                         <br>
                         <br>
-                        -Elfrey Shira and Rosanna Tse
+                        - Rosanna Tse and Elfrey Shira
                     </p>
 
                     <div data-magellan-expedition="fixed">
@@ -165,6 +167,11 @@
     <script type="text/javascript" src="vendor/fastclick.js"></script>
     <script type="text/javascript" src="vendor/placeholder.js"></script>
     <script type="text/javascript" src="foundation.min.js"></script>
+    
+    <script type="text/javascript" src="clippy.js"></script>
+
+
+
     <script>
         $(document).foundation();
 
@@ -177,7 +184,42 @@
                 if (count===0){
                   $('#google-map').css('pointer-events','all');
               }
-          },500);
+          }, 500);
+        });
+
+        $(function() {
+
+            clippy.load('Clippy', function(agent){
+
+                window.agent = agent;
+                agent.show();
+
+                var jqWindow = $(window);
+                var height = jqWindow.height();
+                var width = jqWindow.width();
+
+                agent.moveTo(width - 150, height - 150);
+
+                var s = "\u2006\u200B";
+                var space = s;
+
+                agent.speak("I see that you're trying to RSVP for the wedding!" + space);
+                agent.speak('Click on the "RSVP" button in the navigation or scroll down to the bottom of the page.');
+
+                setTimeout(function() {
+                    setInterval(function() {
+                        if (Math.random() > 0.5) {
+                            agent.animate();
+                        }
+                        else {
+                            var posX = Math.floor(jqWindow.width() * Math.random());
+                            var posY = Math.floor(jqWindow.height() * Math.random());
+                            agent.moveTo(posX, posY)
+                        }
+                    }, 15000);
+                }, 30000);
+            });
+
         });
 
     </script>
