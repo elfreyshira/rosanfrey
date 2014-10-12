@@ -4,6 +4,12 @@ body {
 
 .fixed[data-magellan-expedition="fixed"] {
 	left: auto !important;
+	border: none;
+}
+
+div[data-magellan-expedition="fixed"] {
+	border-top: 2px dotted #aaa;
+	border-bottom: 2px dotted #aaa;
 }
 
 .main-content {
@@ -11,10 +17,16 @@ body {
 }
 
 h1 {
-	border-top: 2px solid gray;
 	margin-top: 30px;
 	padding-top: 15px;
+	text-transform: uppercase;
+	font-weight: 200;
+	border-top: 2px solid gray;
 }
+#story-h1 {
+	border-top: none;
+}
+
 
 #story li {
 	border-bottom: 1px solid #ddd;
@@ -28,5 +40,3 @@ h1 {
 	margin-top: 20px;
 	color: #556;
 }
-
-
